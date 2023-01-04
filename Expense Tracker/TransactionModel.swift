@@ -12,7 +12,7 @@ enum TransactionType: String {
     case credit = "credit"
 }
 
-struct Transaction: Identifiable,Decodable {
+struct Transaction: Identifiable,Decodable, Hashable {
     let id: Int
     let date: String
     let institution:String
