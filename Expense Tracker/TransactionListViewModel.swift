@@ -8,6 +8,9 @@
 import Foundation
 import Combine
 
+
+typealias TransactionGroup = [String: [Transaction]]
+
 final class TransactionListViewModel: ObservableObject {
     @Published var transactions: [Transaction] = []
     
@@ -45,7 +48,11 @@ final class TransactionListViewModel: ObservableObject {
                 dump(self?.transactions)
             }
             .store(in: &cancellable)
-
-        
+    }
+    
+    func groupTransactionByMonth() -> TransactionGroup {
+        guard !transactions.isEmpty else {
+            return
+        }
     }
 }
