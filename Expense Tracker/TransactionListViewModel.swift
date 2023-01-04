@@ -7,9 +7,9 @@
 
 import Foundation
 import Combine
+import Collections
 
-
-typealias TransactionGroup = [String: [Transaction]]
+typealias TransactionGroup = OrderedDictionary<String, [Transaction]>
 
 final class TransactionListViewModel: ObservableObject {
     @Published var transactions: [Transaction] = []
@@ -52,7 +52,9 @@ final class TransactionListViewModel: ObservableObject {
     
     func groupTransactionByMonth() -> TransactionGroup {
         guard !transactions.isEmpty else {
-            return
+            return [:]
         }
+        let groupedTransactions = TransactionGroup(grouping: transactions) { $0.month }
+        return groupedTransactions
     }
 }
