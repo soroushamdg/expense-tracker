@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
+    @EnvironmentObject var transactionListVM: TransactionListViewModel
+    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
     var body: some View {
         NavigationView {
             ScrollView{
@@ -15,6 +18,16 @@ struct ContentView: View {
                     Text("Overview")
                         .font(.title2)
                         .bold()
+                    
+                    let data = transactionListVM.accumulateTransaction() // chart data
+                    
+                    if !data.isEmpty {
+                        let totalExpenses = data.last?.1 ?? 0
+                        let label = totalExpenses.formatted(.currency(code: "USD"))
+                        // chart view here
+                    }
+                    
+                    
                     RecentTransactionList()
                 }
                 .padding()

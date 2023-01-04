@@ -20,6 +20,7 @@
 		90B8762C2966233A005A2626 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8762B2966233A005A2626 /* RecentTransactionList.swift */; };
 		90B8762E29662BEC005A2626 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8762D29662BEC005A2626 /* TransactionList.swift */; };
 		90B8763129662E12005A2626 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 90B8763029662E12005A2626 /* Collections */; };
+		90B8763429662EFC005A2626 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 90B8763329662EFC005A2626 /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B8763429662EFC005A2626 /* SwiftUICharts in Frameworks */,
 				90B8763129662E12005A2626 /* Collections in Frameworks */,
 				90B87628296602FD005A2626 /* SwiftUIFontIcon in Frameworks */,
 			);
@@ -111,6 +113,7 @@
 			packageProductDependencies = (
 				90B87627296602FD005A2626 /* SwiftUIFontIcon */,
 				90B8763029662E12005A2626 /* Collections */,
+				90B8763329662EFC005A2626 /* SwiftUICharts */,
 			);
 			productName = "Expense Tracker";
 			productReference = 90B8760D2965F9DF005A2626 /* Expense Tracker.app */;
@@ -143,6 +146,7 @@
 			packageReferences = (
 				90B87626296602FD005A2626 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
 				90B8762F29662E12005A2626 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				90B8763229662EFC005A2626 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 90B8760E2965F9DF005A2626 /* Products */;
 			projectDirPath = "";
@@ -397,6 +401,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		90B8763229662EFC005A2626 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -409,6 +421,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90B8762F29662E12005A2626 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		90B8763329662EFC005A2626 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90B8763229662EFC005A2626 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
