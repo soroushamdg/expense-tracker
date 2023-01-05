@@ -23,11 +23,17 @@ struct ContentView: View {
                     
                     if !data.isEmpty {
                         let totalExpenses = data.last?.1 ?? 0
-                        let label = totalExpenses.formatted(.currency(code: "USD"))
-                        // chart view here
+                        CardView{
+                            VStack{
+                                ChartLabel(totalExpenses.formatted(.currency(code: "USD")),type: .title)
+                                LineChart()
+                            }
+                            .background(Color.systemBackground)
+                        }
+                        .data(data)
+                        .frame(height: 300.0)
+                        .chartStyle(ChartStyle(backgroundColor: Color.background, foregroundColor: [ColorGradient(Color.icon.opacity(0.4), Color.icon)]))
                     }
-                    
-                    
                     RecentTransactionList()
                 }
                 .padding()
